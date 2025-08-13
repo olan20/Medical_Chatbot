@@ -21,12 +21,7 @@ def check_nltk_data():
     for data in required_data:
         try:
             nltk.data.find(f'tokenizers/{data}' if data == 'punkt' else f'corpora/{data}')
-        except LookupError:
-            raise FileNotFoundError(
-                f"NLTK data '{data}' not found at {NLTK_DATA_PATH}. "
-                "Download it from https://raw.githubusercontent.com/nltk/nltk_data/gh-pages/index.xml "
-                "and extract to the specified path."
-            )
+            
         
 
 # Preprocess text
@@ -71,10 +66,11 @@ KNOWLEDGE_BASE = {
     },
     "diet_hypertension": {
         "keywords": ["diet", "food", "eating", "hypertension", "blood pressure diet"],
-        "response": "For hypertension, follow a low-sodium diet with fruits, vegetables (e.g., ugu, spinach), and whole grains. Limit salt and processed foods like maggi cubes. Consult a healthcare provider."
+        "response": "For hypertension, follow a low-sodium diet with fruits, vegetables (e.g, ugu, spinach), and whole grains. Limit salt and processed foods like maggi cubes. Consult a healthcare provider."
     },
     "general_advice": {
         "keywords": ["healthy", "lifestyle", "prevent", "stay healthy"],
-        "response": "To prevent NCDs, maintain a healthy weight, exercise (e.g., 30 minutes daily walking), avoid smoking, and get regular check-ups. Consult a healthcare professional for advice."
+        "response": "To prevent NCDs, maintain a healthy weight, exercise (e.g, 30 minutes daily walking), avoid smoking, and get regular check-ups. Consult a healthcare professional for advice."
     }
 }        
+
